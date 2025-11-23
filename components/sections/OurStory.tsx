@@ -9,13 +9,13 @@ export default function OurStory() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="order-2 md:order-1">
               <p className="text-lg mb-4">
-                Our story began like many great love stories do - with a chance encounter that felt like destiny. 
-                What started as a simple conversation quickly blossomed into something beautiful and profound.
+                Our story began in Kigali, at an entrepreneurship bootcamp neither of us expected would change our lives. 
+                What started as a simple conversation about ideas, building businesses, and the books we loved quickly 
+                turned into an effortless friendship.
               </p>
               <p className="text-lg mb-4">
-                Through shared adventures, quiet moments, and everything in between, we discovered that we were 
-                not just partners, but best friends. Every day together has been a new chapter in our journey, 
-                filled with laughter, love, and countless memories.
+                In each other, we found someone who dreamed boldly, thought deeply, and saw the world with the same 
+                curiosity and ambition. That shared passion sparked a connection that felt natural, inspiring, and meant to be.
               </p>
             </div>
             <div className="order-1 md:order-2 relative rounded-lg h-80 md:h-95 overflow-hidden">
@@ -40,12 +40,13 @@ export default function OurStory() {
             </div>
             <div>
               <p className="text-lg mb-4">
-                Now, as we prepare to say "I do," we're filled with gratitude for all the people who have 
-                supported us along the way. Your presence in our lives has made our love story even more special.
+                From long talks to shared visions and countless moments of laughter, our friendship blossomed into 
+                something beautiful — a partnership built on purpose, faith, and genuine love.
               </p>
               <p className="text-lg">
-                We can't wait to celebrate this next chapter with you - our family and friends who mean the world to us. 
-                Join us as we begin our forever together.
+                Now, as we prepare to say "I do," we're filled with gratitude for all the people who have 
+                supported us along the way. We can't wait to celebrate this next chapter with you - our family 
+                and friends who mean the world to us.
               </p>
             </div>
           </div>
