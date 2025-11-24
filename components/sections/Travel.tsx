@@ -157,20 +157,37 @@ export default function Travel() {
           {/* Visa Requirements */}
           <div>
             <h3 className="text-2xl font-serif text-gray-800 mb-6">Visa Requirements</h3>
-            <div className="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-lg p-6">
-              <h4 className="text-lg font-semibold text-gray-800 mb-3">Yellow Fever Vaccination</h4>
-              <p className="text-gray-700 mb-3">
-                Kenya requires a valid Yellow Fever vaccination certificate for travelers coming from or 
-                transiting through countries with risk of Yellow Fever transmission.
-              </p>
-              <p className="text-gray-700 mb-3">
-                <strong>Important:</strong> Make sure to get your Yellow Fever vaccination at least 10 days 
-                before your travel date. The certificate is valid for life once you've received the vaccination.
-              </p>
-              <p className="text-gray-700 text-sm">
-                Please check with your local health department or travel clinic for the most up-to-date 
-                requirements and to schedule your vaccination.
-              </p>
+            <div className="space-y-6">
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-6">
+                <h4 className="text-lg font-semibold text-gray-800 mb-3">Electronic Travel Authorization (ETA)</h4>
+                <p className="text-gray-700 mb-3">
+                  If you are not a holder of an Ethiopian passport or an EAC (East African Community) passport, 
+                  you will need to obtain an Electronic Travel Authorization (ETA) before traveling to Kenya.
+                </p>
+                <p className="text-gray-700 mb-3">
+                  The EAC includes citizens from: Kenya, Tanzania, Uganda, Rwanda, Burundi, South Sudan, and the Democratic Republic of Congo.
+                </p>
+                <p className="text-gray-700 text-sm">
+                  You can apply for an ETA online through the official Kenyan government portal. We recommend 
+                  applying at least 2-3 weeks before your travel date to ensure timely processing.
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-lg p-6">
+                <h4 className="text-lg font-semibold text-gray-800 mb-3">Yellow Fever Vaccination</h4>
+                <p className="text-gray-700 mb-3">
+                  Kenya requires a valid Yellow Fever vaccination certificate for travelers coming from or 
+                  transiting through countries with risk of Yellow Fever transmission.
+                </p>
+                <p className="text-gray-700 mb-3">
+                  <strong>Important:</strong> Make sure to get your Yellow Fever vaccination at least 10 days 
+                  before your travel date. The certificate is valid for life once you've received the vaccination.
+                </p>
+                <p className="text-gray-700 text-sm">
+                  Please check with your local health department or travel clinic for the most up-to-date 
+                  requirements and to schedule your vaccination.
+                </p>
+              </div>
             </div>
           </div>
 

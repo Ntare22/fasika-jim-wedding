@@ -34,7 +34,7 @@ export default function RSVP() {
       </div>
       <div className="relative z-10 max-w-2xl mx-auto">
         <h2 className="text-4xl sm:text-5xl font-serif text-center text-gray-800 mb-12">RSVP</h2>
-        <div className="bg-white rounded-lg shadow-lg p-8 sm:p-10">
+        <div className="bg-white shadow-lg p-8 sm:p-10">
           <form onSubmit={handleRsvpSubmit} className="space-y-6">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">

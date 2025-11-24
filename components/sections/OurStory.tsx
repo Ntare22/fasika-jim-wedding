@@ -1,18 +1,6 @@
 import Image from 'next/image';
-import GalleryCarousel from '@/components/GalleryCarousel';
 
 export default function OurStory() {
-  // Gallery images
-  const galleryImages = [
-    '/gallery_1.jpg',
-    '/gallery_2.jpg',
-    '/gallery_3.jpg',
-    '/gallery_4.jpg',
-    '/gallery_5.jpg',
-    '/gallery_6.jpg',
-    '/gallery_7.jpg',
-  ];
-
   return (
     <section id="our-story" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-6xl mx-auto">
@@ -30,9 +18,66 @@ export default function OurStory() {
             </p>
           </div>
           
-          {/* Gallery Carousel */}
-          <div className="w-full">
-            <GalleryCarousel images={galleryImages} />
+          {/* Polaroid Pictures Scattered */}
+          <div className="relative max-w-5xl mx-auto py-12">
+            <div className="relative flex flex-wrap justify-center items-center gap-8 md:gap-12">
+              {/* Polaroid 1 */}
+              <div 
+                className="relative w-64 h-80 bg-white p-2"
+                style={{ 
+                  transform: 'rotate(-5deg)',
+                  transformOrigin: 'center',
+                  boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3), 0 5px 10px rgba(0, 0, 0, 0.2)'
+                }}
+              >
+                <div className="relative w-full h-full overflow-hidden">
+                  <Image
+                    src="/our_story_new1.jpg"
+                    alt="Fasika and Jim"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+              
+              {/* Polaroid 2 */}
+              <div 
+                className="relative w-64 h-80 bg-white p-2"
+                style={{ 
+                  transform: 'rotate(8deg)',
+                  transformOrigin: 'center',
+                  boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3), 0 5px 10px rgba(0, 0, 0, 0.2)'
+                }}
+              >
+                <div className="relative w-full h-full overflow-hidden">
+                  <Image
+                    src="/our_story_new2.jpg"
+                    alt="Fasika and Jim"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+              
+              {/* Polaroid 3 */}
+              <div 
+                className="relative w-64 h-80 bg-white p-2"
+                style={{ 
+                  transform: 'rotate(-3deg)',
+                  transformOrigin: 'center',
+                  boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3), 0 5px 10px rgba(0, 0, 0, 0.2)'
+                }}
+              >
+                <div className="relative w-full h-full overflow-hidden">
+                  <Image
+                    src="/our_story_new3.jpg"
+                    alt="Fasika and Jim"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
