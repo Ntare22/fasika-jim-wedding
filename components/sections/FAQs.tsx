@@ -6,7 +6,7 @@ import Image from 'next/image';
 const faqs = [
   {
     question: 'What should I wear?',
-    answer: 'We\'d love to see our family and friends dress up with us! We\'re requesting cocktail attire. Think elegant and comfortable - dresses, suits, or dressy separates.',
+    answer: 'Dress lightly, ladies wear comfortable clothing. The weather in Mombasa is warm, with temperatures expected to be 30-33 degrees Celsius.',
   },
   {
     question: 'Will the ceremony and reception be indoors or outdoors?',
@@ -21,12 +21,8 @@ const faqs = [
     answer: 'We recommend arriving 15-20 minutes before the ceremony begins to allow time for parking and finding your seat.',
   },
   {
-    question: 'Will there be parking available?',
-    answer: 'Yes, there will be complimentary parking available at the venue. We\'ll provide more details closer to the date.',
-  },
-  {
-    question: 'Are children welcome?',
-    answer: 'While we love your little ones, our wedding is going to be an adults-only event so that everyone can relax and enjoy the evening. We appreciate you making arrangements ahead of time and leaving the kids at home so you can celebrate with us.',
+    question: 'Should I bring sunscreen?',
+    answer: 'Yes! We highly recommend bringing sunscreen. The weather in Mombasa is warm and sunny, with temperatures expected to be 30-33 degrees Celsius. Please protect yourself from the sun, especially during the outdoor ceremony and reception.',
   },
 ];
 

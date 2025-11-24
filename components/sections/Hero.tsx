@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Countdown from '@/components/Countdown';
 
 export default function Hero() {
   return (
@@ -22,11 +23,12 @@ export default function Hero() {
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif text-white mb-6 drop-shadow-lg">
           Fasika & Jim
         </h1>
-        <div className="flex items-center justify-center gap-4 mb-8">
+        <div className="flex items-center justify-center gap-4 mb-6">
           <div className="h-px w-16 bg-white/80"></div>
           <p className="text-xl sm:text-2xl text-white font-light drop-shadow-lg">February 9, 2026</p>
           <div className="h-px w-16 bg-white/80"></div>
         </div>
+        <Countdown />
         <a
           href="#rsvp"
           className="inline-block bg-white text-gray-800 px-8 py-3 rounded-full hover:bg-gray-100 transition-colors font-medium shadow-lg"
