@@ -1,43 +1,31 @@
-export default function Location() {
+export default function Timeline() {
   const events = [
     {
-      date: 'February 8th',
-      time: '5:00 PM',
-      title: 'Rehearsal Dinner',
-      description: 'Aqua Garden - Expected temperature: 30 to 33 degrees Celsius',
-    },
-    {
-      date: 'February 9th',
       time: '3:00 PM',
       title: 'Welcome',
       description: 'Guest gathering, refreshments, and getting acquainted',
     },
     {
-      date: 'February 9th',
       time: '4:00 PM',
       title: 'Ceremony',
-      description: 'Wedding ceremony at Sarova Whitesands Beach Resort & Spa',
+      description: 'Wedding ceremony at Sarova Whitesands',
     },
     {
-      date: 'February 9th',
       time: '5:00 PM',
       title: 'Reception',
       description: 'Cocktail hour and celebration',
     },
     {
-      date: 'February 9th',
       time: '6:00 PM',
       title: 'Dinner',
       description: 'Wedding dinner and toasts',
     },
     {
-      date: 'February 9th',
       time: '7:00 PM',
       title: 'Dancing',
       description: 'Music, dancing, and celebration',
     },
     {
-      date: 'February 9th',
       time: '11:00 PM',
       title: 'Final',
       description: 'We hope our celebration will be memorable for you',
@@ -45,12 +33,12 @@ export default function Location() {
   ];
 
   return (
-    <section id="location" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-rose-50 via-pink-50 to-amber-50">
+    <section id="timeline" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-4xl sm:text-5xl font-serif text-center text-gray-800 mb-16">Wedding Day Timeline</h2>
         <div className="relative">
           {/* Vertical line - centered */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gray-400"></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gray-300"></div>
           
           {/* Timeline events */}
           <div className="space-y-12">
@@ -60,11 +48,8 @@ export default function Location() {
                 className="relative flex items-center"
               >
                 {/* Time circle - centered */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 z-10 w-24 h-24 bg-white border-4 border-gray-800 rounded-full flex items-center justify-center shadow-lg">
-                  <div className="text-center px-2">
-                    <div className="text-xs font-semibold text-gray-800 mb-1">
-                      {event.date}
-                    </div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 z-10 w-20 h-20 bg-white border-4 border-gray-800 rounded-full flex items-center justify-center shadow-lg">
+                  <div className="text-center">
                     <div className="text-sm font-semibold text-gray-800">
                       {event.time.split(' ')[0]}
                     </div>
