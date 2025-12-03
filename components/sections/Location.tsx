@@ -8,39 +8,15 @@ export default function Location() {
     },
     {
       date: 'February 9th',
-      time: '3:00 PM',
-      title: 'Welcome',
-      description: 'Guest gathering, refreshments, and getting acquainted',
-    },
-    {
-      date: 'February 9th',
-      time: '4:00 PM',
-      title: 'Ceremony',
+      time: '4:30 PM',
+      title: 'Ring Ceremony',
       description: 'Wedding ceremony at Sarova Whitesands Beach Resort & Spa',
     },
     {
       date: 'February 9th',
-      time: '5:00 PM',
+      time: '6:30 PM',
       title: 'Reception',
       description: 'Cocktail hour and celebration',
-    },
-    {
-      date: 'February 9th',
-      time: '6:00 PM',
-      title: 'Dinner',
-      description: 'Wedding dinner and toasts',
-    },
-    {
-      date: 'February 9th',
-      time: '7:00 PM',
-      title: 'Dancing',
-      description: 'Music, dancing, and celebration',
-    },
-    {
-      date: 'February 9th',
-      time: '11:00 PM',
-      title: 'Final',
-      description: 'We hope our celebration will be memorable for you',
     },
   ];
 
