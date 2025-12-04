@@ -20,11 +20,18 @@ GOOGLE_SHEET_ID=your-google-sheet-id-here
 4. Enter a project name (e.g., "Wedding RSVP")
 5. Click "Create"
 
-## Step 2: Enable Google Sheets API
+## Step 2: Enable Google Sheets API ⚠️ IMPORTANT
+
+**This step is critical!** If you skip this, you'll get a 403 error when trying to save RSVPs.
 
 1. In your Google Cloud project, go to "APIs & Services" > "Library"
 2. Search for "Google Sheets API"
-3. Click on it and click "Enable"
+3. Click on it and click **"Enable"**
+4. Wait a few minutes for the API to be fully enabled (you may see a loading indicator)
+
+**Quick Link:** [Enable Google Sheets API](https://console.cloud.google.com/apis/library/sheets.googleapis.com)
+
+**Note:** If you see an error like "Google Sheets API has not been used in project X before or it is disabled", you need to complete this step.
 
 ## Step 3: Create a Service Account
 
@@ -96,9 +103,20 @@ Open the downloaded JSON file. You'll need:
 
 ## Troubleshooting
 
-- **"Missing required fields"**: Make sure all environment variables are set correctly
-- **"Permission denied"**: Make sure you shared the sheet with the service account email
-- **"Invalid credentials"**: Double-check that the private key includes the `\n` characters and is properly quoted
+- **"Google Sheets API has not been used in project X before or it is disabled" (403 Error)**:
+  - This means the Google Sheets API is not enabled in your Google Cloud project
+  - Go to [Google Cloud Console APIs Library](https://console.cloud.google.com/apis/library/sheets.googleapis.com)
+  - Select your project from the dropdown
+  - Click "Enable" and wait a few minutes for it to activate
+  - See Step 2 above for detailed instructions
+
+- **"Missing required fields"**: Make sure all environment variables are set correctly in your `.env.local` file
+
+- **"Permission denied" (403 Error)**: Make sure you shared the Google Sheet with the service account email (see Step 7)
+
+- **"Invalid credentials" (401 Error)**: Double-check that the private key includes the `\n` characters and is properly quoted in your `.env.local` file
+
+- **"Spreadsheet not found" (404 Error)**: Verify your `GOOGLE_SHEET_ID` is correct (it's in the URL of your Google Sheet)
 
 ## For Production (Vercel/Netlify/etc.)
 

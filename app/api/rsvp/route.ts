@@ -46,7 +46,41 @@ async function appendToSheet(data: {
     });
 
     return true;
-  } catch (error) {
+  } catch (error: any) {
+    // Provide helpful error messages for common issues
+    if (error?.code === 403) {
+      const errorMessage = error?.message || '';
+      // Extract project ID if available in error message
+      const projectIdMatch = errorMessage.match(/project (\d+)/);
+      const projectId = projectIdMatch ? projectIdMatch[1] : 'your-project';
+      
+      console.error('❌ Google Sheets API Error (403):');
+      console.error('   The Google Sheets API is not enabled in your Google Cloud project.');
+      console.error(`   Project ID: ${projectId}`);
+      console.error('   To fix this:');
+      console.error('   1. Go to: https://console.cloud.google.com/apis/library/sheets.googleapis.com');
+      console.error('   2. Select your project');
+      console.error('   3. Click "Enable"');
+      console.error('   4. Wait a few minutes for changes to propagate');
+      console.error('   See GOOGLE_SHEETS_SETUP.md for detailed instructions.');
+      
+      throw new Error(`Google Sheets API not enabled. Enable it at: https://console.cloud.google.com/apis/library/sheets.googleapis.com?project=${projectId}`);
+    }
+    
+    if (error?.code === 404) {
+      console.error('❌ Google Sheets Error (404):');
+      console.error('   The spreadsheet ID is incorrect or the sheet does not exist.');
+      console.error('   Check your GOOGLE_SHEET_ID environment variable.');
+      throw new Error('Spreadsheet not found. Check your GOOGLE_SHEET_ID.');
+    }
+    
+    if (error?.code === 401) {
+      console.error('❌ Google Sheets Error (401):');
+      console.error('   Authentication failed. Check your service account credentials.');
+      console.error('   Verify GOOGLE_SERVICE_ACCOUNT_EMAIL and GOOGLE_PRIVATE_KEY are correct.');
+      throw new Error('Authentication failed. Check your service account credentials.');
+    }
+    
     console.error('Error appending to Google Sheets:', error);
     throw error;
   }
@@ -73,10 +107,14 @@ export async function POST(request: NextRequest) {
     ) {
       try {
         await appendToSheet({ name, email, guests, attending, dietary });
-      } catch (sheetError) {
-        console.error('Failed to save to Google Sheets:', sheetError);
-        // Continue execution - don't fail the request if Sheets fails
-        // You might want to log this or send an alert
+        console.log('✅ RSVP successfully saved to Google Sheets');
+      } catch (sheetError: any) {
+        // Log detailed error but don't fail the request
+        // The RSVP is still considered successful from the user's perspective
+        console.error('⚠️  Failed to save to Google Sheets (RSVP still recorded):', sheetError?.message || sheetError);
+        
+        // In production, you might want to send an alert/notification here
+        // For now, we'll just log it and continue
       }
     } else {
       // Fallback: Log to console if Google Sheets is not configured
