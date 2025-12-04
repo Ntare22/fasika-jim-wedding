@@ -11,12 +11,41 @@ export default function RSVP() {
     attending: 'yes',
     dietary: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const handleRsvpSubmit = (e: React.FormEvent) => {
+  const handleRsvpSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle RSVP submission - you can integrate with a backend or email service
-    alert('Thank you for your RSVP! We look forward to celebrating with you.');
-    setRsvpForm({ name: '', email: '', guests: '1', attending: 'yes', dietary: '' });
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('/api/rsvp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(rsvpForm),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setRsvpForm({ name: '', email: '', guests: '1', attending: 'yes', dietary: '' });
+        // Reset status message after 5 seconds
+        setTimeout(() => setSubmitStatus('idle'), 5000);
+      } else {
+        setSubmitStatus('error');
+        setTimeout(() => setSubmitStatus('idle'), 5000);
+      }
+    } catch (error) {
+      console.error('Error submitting RSVP:', error);
+      setSubmitStatus('error');
+      setTimeout(() => setSubmitStatus('idle'), 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -115,10 +144,21 @@ export default function RSVP() {
             )}
             <button
               type="submit"
-              className="w-full bg-gray-800 text-white py-3 rounded-lg hover:bg-gray-700 transition-colors font-medium"
+              disabled={isSubmitting}
+              className="w-full bg-gray-800 text-white py-3 rounded-lg hover:bg-gray-700 transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Submit RSVP
+              {isSubmitting ? 'Submitting...' : 'Submit RSVP'}
             </button>
+            {submitStatus === 'success' && (
+              <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg text-green-800 text-center">
+                Thank you for your RSVP! We look forward to celebrating with you.
+              </div>
+            )}
+            {submitStatus === 'error' && (
+              <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg text-red-800 text-center">
+                Something went wrong. Please try again later.
+              </div>
+            )}
           </form>
         </div>
       </div>
