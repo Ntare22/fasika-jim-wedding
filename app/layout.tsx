@@ -19,7 +19,7 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: "Fasika & Jim - Wedding",
-  description: "Join us in celebrating our wedding on October 14, 2025",
+  description: "Join us in celebrating our wedding on February 9, 2026",
 };
 
 export default function RootLayout({
